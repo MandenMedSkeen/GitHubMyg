@@ -1,0 +1,551 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #ffffff;
+  color: #2d1e2f;
+  overflow-x: hidden;
+}
+
+section {
+  scroll-margin-top: 100px;
+}
+
+h2 {
+  font-family: "Fredoka", sans-serif;
+  font-size: 36px;
+}
+
+/*-------------------------------------------------------------------------- STICKY NAV -----------------------------------------------------------------------------*/
+
+header {
+  background-color: #2d1e2f;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.08);
+}
+
+/*----------------------------------------------------------------------------- LOGO --------------------------------------------------------------------------------*/
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 55px;
+  height: auto;
+  display: block;
+  margin-right: 12px;
+}
+
+.logo span {
+  font-family: "Fredoka", sans-serif;
+  font-size: 42px;
+  color: #ffffff;
+}
+
+/*-------------------------------------------------------------------------- NAVIGATION -----------------------------------------------------------------------------*/
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 18px;
+  font-family: "Poppins", sans-serif;
+}
+
+nav a:hover {
+  color: #f7a8c4;
+}
+
+/*----------------------------------------------------------------------------- HERO --------------------------------------------------------------------------------*/
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  padding: 40px;
+  background-color: #f7a8c4;
+}
+
+.hero-text h1 {
+  font-family: "Fredoka", sans-serif;
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  line-height: 1.5;
+}
+
+.slogan {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.hero-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 20px;
+  background-color: #2d1e2f;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 25px;
+}
+
+.hero-image {
+  width: 100%;
+  height: 400px;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/*------------------------------------------------------------------------- BUTIK STATUS ----------------------------------------------------------------------------*/
+
+.status-section,
+.products-section,
+.cart-section,
+.contact-section {
+  padding: 40px;
+}
+
+.status-section {
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+#shopStatus {
+  display: inline-block;
+  background-color: #ffffff;
+  padding: 15px 25px;
+  border-radius: 20px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.opening-hours {
+  margin-top: 20px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.opening-hours p {
+  margin: 6px 0;
+}
+
+/*------------------------------------------------------------------------- PRODUKT KORT ----------------------------------------------------------------------------*/
+
+.products-section {
+  padding-top: 20px;
+}
+
+.products-section h2 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.product-card {
+  background-color: #ffffff;
+  border: 2px solid #2d1e2f;
+  border-radius: 25px;
+  overflow: hidden;
+  padding: 15px;
+  transition: 0.2s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-image {
+  width: 100%;
+  height: 180px;
+  background-color: #f5fafe;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 20px;
+}
+
+.product-card h3 {
+  font-family: "Fredoka", sans-serif;
+  font-size: 28px;
+  margin-top: 0;
+  text-align: center;
+}
+
+.product-card p {
+  margin: 8px 0;
+  text-align: center;
+}
+
+.product-quantity {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.product-quantity span {
+  font-size: 20px;
+  font-weight: 600;
+  min-width: 20px;
+  text-align: center;
+}
+
+/*----------------------------------- PRODUKT KORT KNAPPER -----------------------------------*/
+
+.quantity-btn {
+  width: 35px;
+  height: 35px;
+  border: none;
+  border-radius: 50%;
+  background-color: #f7a8c4;
+  color: #2d1e2f;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.add-btn {
+  background-color: #f7a8c4;
+  color: #2d1e2f;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  display: block;
+  margin: 20px auto 0 auto;
+  min-width: 130px;
+}
+
+.add-btn:disabled,
+.quantity-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/*----------------------------------------------------------------------------- KURV --------------------------------------------------------------------------------*/
+
+.cart-section {
+  background-color: #8ed1fc;
+}
+
+#cartItems div {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+
+#clearCartBtn,
+#orderBtn {
+  background-color: #2d1e2f;
+  color: #ffffff;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 20px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+#receiptBox {
+  margin-top: 20px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+/*------------------------------------------------------------------------- KONTAKT INFO ----------------------------------------------------------------------------*/
+
+.contact-section {
+  background-color: #2d1e2f;
+  color: #ffffff;
+}
+
+.contact-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.contact-info,
+.contact-form-box {
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.contact-info h3 {
+  font-family: "Fredoka", sans-serif;
+  font-size: 28px;
+  margin-top: 0;
+}
+
+.contact-info p {
+  margin: 10px 0;
+}
+
+/*----------------------------------------------------------------------- KONTAKTFORMULAR --------------------------------------------------------------------------*/
+
+.contact-form label {
+  display: block;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+}
+
+.contact-form textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+.contact-form input[type="submit"] {
+  margin-top: 18px;
+  background-color: #f7a8c4;
+  color: #2d1e2f;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#formStatus {
+  margin-top: 12px;
+  font-weight: 600;
+}
+
+.toggle-contact-btn {
+  background-color: #f7a8c4;
+  color: #2d1e2f;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  margin: 10px 0 15px 0;
+}
+
+.hide-form {
+  display: none;
+}
+
+/*-------------------------------------------------------------------------- DARK MODE -----------------------------------------------------------------------------*/
+
+.theme-toggle-btn {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 50%;
+  background-color: #2d1e2f;
+  color: #ffffff;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 2000;
+}
+
+body.dark-mode {
+  background-color: #1b121d;
+  color: #ffffff;
+}
+
+body.dark-mode .hero {
+  background-color: #2d1e2f;
+}
+
+body.dark-mode .hero-button {
+  background-color: #8ed1fc;
+  color: #2d1e2f;
+}
+
+body.dark-mode .product-card {
+  background-color: #2d1e2f;
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+body.dark-mode .product-image {
+  background-color: #3a2a3d;
+}
+
+body.dark-mode #shopStatus {
+  background-color: #1b121d;
+  color: #ffffff;
+}
+
+body.dark-mode .opening-hours {
+  background-color: #1b121d;
+  color: #ffffff;
+}
+
+body.dark-mode .cart-section {
+  background-color: #241825;
+  color: #ffffff;
+}
+
+body.dark-mode #cartItems div,
+body.dark-mode #receiptBox {
+  background-color: #3a2a3d;
+  color: #ffffff;
+}
+
+body.dark-mode .theme-toggle-btn {
+  background-color: #f7a8c4;
+  color: #2d1e2f;
+}
+
+/*--------------------------------------------------------------------- MOBIL/TABLET VERSION ------------------------------------------------------------------------*/
+
+@media (max-width: 900px) {
+  header {
+    position: static;
+    top: auto;
+    z-index: auto;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  /*----------------------------------------- LOGO --------------------------------------------*/
+
+  .logo {
+    margin-bottom: 15px;
+    justify-content: center;
+  }
+
+  .logo span {
+    font-size: 30px;
+  }
+
+  /*-------------------------------------- NAVIGATION -----------------------------------------*/
+
+  nav {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  /*----------------------------------------- HERO --------------------------------------------*/
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 25px;
+  }
+
+  .hero-text h1 {
+    font-size: 40px;
+  }
+
+  .slogan {
+    font-size: 18px;
+  }
+
+  .hero-image {
+    height: 250px;
+  }
+
+  .status-section {
+    width: 100%;
+    padding: 25px;
+  }
+
+  .products-section,
+  .cart-section,
+  .contact-section {
+    padding: 25px;
+  }
+
+  /*---------------------------------------- KONTAKT ------------------------------------------*/
+
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  /*-------------------------------------- PRODUKT KORT ---------------------------------------*/
+
+  .product-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/*------------------------------------------------------------------------ MOBIL VERSION ---------------------------------------------------------------------------*/
+
+@media (max-width: 600px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .theme-toggle-btn {
+    width: 55px;
+    height: 55px;
+    right: 15px;
+    bottom: 15px;
+  }
+}

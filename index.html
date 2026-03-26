@@ -1,57 +1,130 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="da">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <title>Float</title>
+    <title>SkumSkyen</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <link rel="stylesheet" href="skumstyle.css" />
   </head>
+
   <body>
     <header>
-      <h1>Mit website</h1>
-      <h4>Endnu et website</h4>
+      <div class="logo">
+        <img src="img/skumsky-icon.png" alt="SkumSkyen ikon" />
+        <span>SkumSkyen</span>
+      </div>
+
+      <nav>
+        <a href="#home">Hjem</a>
+        <a href="#products">Produkter</a>
+        <a href="#cart">Kurv</a>
+        <a href="#contact">Kontakt</a>
+      </nav>
     </header>
-    <div class="container">
-      <div id="box-1" class="box">
-        <h3>Boks 1</h3>
+
+    <section class="hero" id="home">
+      <div class="hero-text">
+        <h1>SkumSkyen</h1>
+        <p class="slogan">Gør din hverdag lidt mere fluffy</p>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-          quibusdam est distinctio. Ducimus iste corporis reprehenderit nobis
-          nam. Sunt voluptatum consequuntur repellendus ex officiis, facere
-          perferendis iusto eius nostrum inventore.
-        <div class="linkbox">
-          <a href="#">Læs om min boks</a>
-          </div>
+          Velkommen til SkumSkyen. Her finder du bløde skumfiduser i lækre smage
+          og flotte farver! Klassiske looks, som ligner dem du kender, men med
+          lidt ekstra blød fornemmelse!
         </p>
-      </div>
-      <div id="box-2" class="box">
-        <h3>Boks 2</h3>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-          quibusdam est distinctio. Ducimus iste corporis reprehenderit nobis
-          nam. Sunt voluptatum consequuntur repellendus ex officiis, facere
-          perferendis iusto eius nostrum inventore.
+          Vi har en bred forståelse for skumfiduser, og vi bestræber os efter at
+          levere de blødeste skumfiduser af den højeste kvalitet til vores
+          kunder.
         </p>
+        <a href="#products" class="hero-button">Se produkter</a>
       </div>
-      <div id="box-3" class="box">
-        <h3>Boks 3</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-          quibusdam est distinctio. Ducimus iste corporis reprehenderit nobis
-          nam. Sunt voluptatum consequuntur repellendus ex officiis, facere
-          perferendis iusto eius nostrum inventore.
-        </p>
+
+      <div class="hero-image">
+        <img src="img/skumsky-hero.png" alt="Hero billede af skumfiduser" />
       </div>
-      <div class="clr"></div>
-      <div id="box-4" class="box">
-        <h3>Boks 4</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-          quibusdam est distinctio. Ducimus iste corporis reprehenderit nobis
-          nam. Sunt voluptatum consequuntur repellendus ex officiis, facere
-          perferendis iusto eius nostrum inventore.
-        </p>
+    </section>
+
+    <section class="status-section">
+      <h2>Butikkens status</h2>
+      <p id="shopStatus">Tjekker åbningstid...</p>
+
+      <div class="opening-hours">
+        <p><strong>Åbningstider</strong></p>
+        <p>Mandag - Torsdag: 14:00 - 22:00</p>
+        <p>Fredag - Søndag: 12:00 - 23:00</p>
       </div>
-    </div>
+    </section>
+
+    <section class="products-section" id="products">
+      <h2>Vores produkter</h2>
+      <div class="product-grid" id="productGrid"></div>
+    </section>
+
+    <section class="cart-section" id="cart">
+      <h2>Din kurv</h2>
+      <div id="cartItems">
+        <p>Din kurv er tom.</p>
+      </div>
+
+      <p><strong>Total:</strong> <span id="cartTotal">0 kr. / 0 g</span></p>
+
+      <button id="clearCartBtn">Ryd kurv</button>
+      <button id="orderBtn">Bestil</button>
+
+      <div id="receiptBox"></div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <h2>Kontakt</h2>
+
+      <div class="contact-wrapper">
+        <div class="contact-info">
+          <h3>SkumSkyen</h3>
+          <p>Skumgade 67</p>
+          <p>9900 Slikbyen</p>
+          <p>Email: jajaja-jegharsguandet#setil@skumskyen.dk</p>
+          <p>Telefon: +45 12 34 56 78</p>
+          <p>Har du spørgsmål eller særlige ønsker? Send os en besked her.</p>
+
+          <button id="toggleContactBtn" class="toggle-contact-btn">
+            Vis kontaktformular
+          </button>
+        </div>
+
+        <div id="contactFormBox" class="contact-form-box hide-form">
+          <form id="contact-form" class="contact-form">
+            <input type="hidden" name="time" id="contact-time" />
+
+            <label for="name">Navn</label>
+            <input type="text" id="name" name="name" required />
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+
+            <label for="title">Emne</label>
+            <input type="text" id="title" name="title" required />
+
+            <label for="message">Besked</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <input type="submit" value="Send besked" />
+            <p id="formStatus"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <button id="themeToggleBtn" class="theme-toggle-btn">🌙</button>
+
+    <script src="skumscript.js"></script>
   </body>
 </html>
